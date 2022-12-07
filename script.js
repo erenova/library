@@ -61,7 +61,6 @@ submitForm.addEventListener('click', (e) => {
     displayBook()
 })
 
-let deleteButton;
 
 function displayBook() {
         gridBookList.innerHTML = "";
@@ -79,8 +78,7 @@ function displayBook() {
 
         var removeButtonAdd = document.createElement('button')
         removeButtonAdd.classList.add('remove-button')
-        removeButtonAdd.setAttribute('bookNumber' , i)
-        deleteButton = document.getElementsByClassName('remove-button')
+        removeButtonAdd.dataset.library = i;
 
         gridBookList.appendChild(gridCard);
         gridCard.appendChild(paragraph0)
@@ -99,7 +97,6 @@ function displayBook() {
 
         }
 
-        gridCard.setAttribute('data-remove', `${i}`)
         paragraph0.innerText = book.title;
         paragraph1.innerText = book.author;
         paragraph2.innerText = book.page;
@@ -115,12 +112,13 @@ function displayBook() {
         })
 
         
-      removeButtonAdd.addEventListener('click' , () => {
+      removeButtonAdd.addEventListener('click' , (e) => {
         
-        if (gridCard.getAttribute("data-remove") == i) {
-            myLibrary.splice(gridCard.getAttribute("data-remove"),1)
-            gridCard.remove()
-        }
+        let index = e.target.dataset.library;
+        myLibrary.splice(index, 1)
+        displayBook()
+
+
       })
     }
 
