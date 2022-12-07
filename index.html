@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library App</title>
+</head>
+<body>
+    <header>
+        <h1 id="reload" onclick="location.reload()">Library app</h1>
+    </header>
+    <main class="main container">
+        <button id="activateForm">New Book</button>
+        <div class="grid-book-list" id="grid-book-list">
+
+            <!-- Grid-cards starting -->
+
+
+
+
+            <!-- Grid-cards ending -->
+
+        </div>
+    </main>
+    <div id="modalForm" class="modal-form">
+        <h2>Create New Book</h2>
+        <form id="formArea" class="form-area">
+            <input type="text" name="bookTitle" id="bookTitle" placeholder="Book Title" >
+            <input type="text" name="bookAuthor" id="bookAuthor" placeholder="Author Name" >
+            <input type="number" name="bookPage" id="bookPage" placeholder="Page Number"  min="1">
+            <div id="checkbox">
+                <label for="readCheck">Read it?</label>
+                <input type="checkbox" name="readCheck" id="readCheck">
+            </div>
+            <button type="submit" id="submitForm" class="submit-form">Create</button>
+        </form>
+    </div>
+    <div id="modalShadow" class="modal-shadow"></div>
+    <footer id="footer">Lorem, ipsum.</footer>
+</body>
+</html>

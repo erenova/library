@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", Helvetica, sans-serif;
+}
+*:focus {
+    outline: none;
+}
+
+body {
+    min-height: 100vh;
+    background: rgb(255,255,255);
+background: linear-gradient(180deg, rgba(255,255,255,1) 50%, rgba(189,198,200,1) 100%);
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 1.2rem;
+}
+/* !Header Start */
+
+#reload {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#reload:hover {
+    color: red;
+}
+
+header {
+    box-shadow: 0px 18px 11px -3px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+}
+
+header > h1 {
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-size: 2.4rem;
+    color: rgb(24, 15, 15);
+}
+
+/* Header End */
+
+/* !Main Start */
+
+.main {
+    margin-top: 20px;
+    text-align: center;
+}
+.container {
+    max-width: 1200px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#activateForm {
+min-width: 80px;
+margin-top: 3vh;
+transition: 0.3s;
+background-color: rgb(211, 214, 214);
+border-radius: 10px;
+padding: 5px;
+font-size: 1.5rem;
+font-weight: bold;
+justify-content: center;
+align-items: center;
+width: 10vw;
+}
+#activateForm:hover {
+    transform: scale(1.2);
+    background-color: rgb(40, 40, 40);
+    color: white;
+    border-radius: 25px;
+        
+    }
+
+ /* !Grid! *//* book *//* List */ 
+.grid-book-list {
+    justify-content: center;
+    display: grid;
+    margin-top: 3vh;
+    width: 70vw;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin-top: 40px;
+    gap: 25px;
+}
+
+.grid-card {
+    line-height: 1.2;
+    padding: 25px;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(195, 193, 193);
+    border-radius: 5px;
+    font-size: 1.5rem;
+}
+
+.card-buttons {
+    display: flex;
+    gap: 30px;
+}
+
+.switch-read-status {
+    width: 90px;
+    border-radius: 20px;
+    padding: 5px;
+    height: 35px;
+    transition: .3s;
+}
+.switch-read-status:hover {
+    transform: scale(1.2);
+}
+.switch-read-status.read-false {
+    background-color: rgb(125, 16, 16);
+}
+.switch-read-status.read-false::after {
+    content: "Not read";
+}
+
+.switch-read-status.read-true {
+    background-color: darkgreen;
+}
+.switch-read-status.read-true::after {
+    content: "Read";
+}
+
+.remove-button {
+    width: 90px;
+    height: 35px;
+    background-color: red;
+    border-radius: 20px;
+    padding: 5px;
+    transition: .3s ;
+}
+
+.remove-button::after {
+    content: 'Remove';
+}
+.remove-button:hover {
+    transform: scale(1.2);
+}
+/* Main End */
+
+/* !Modal Start */
+.modal-form {
+    z-index: 2;
+    background-color: rgb(215, 211, 211);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 0.25s;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+
+    border-radius: 22px;
+    
+}
+.modal-form.active {
+    transform: translate(-50%, -50%) scale(1);
+
+}
+
+.modal-form h2 {
+    text-align: center;
+    padding: 20px;
+}
+
+.form-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 7vh;
+}
+#checkbox {
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    display: flex;
+    gap: 25px;
+}
+
+input[type="text"],input[type="number"] {
+    margin-top: 2vh;
+    min-width: 120px;
+    width: 12vw;
+    height: 4vh;
+    border-radius: 25px;
+    border: none;
+    text-align: center;
+}
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: green;
+    transition: 0.3s;  
+}
+input[type="checkbox"]:hover,input[type="checkbox"]:checked {
+transform: scale(1.5);
+}
+
+
+
+
+.submit-form {
+
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 1vh;
+    transition: 0.3s;
+    background-color: rgba(7, 224, 112, 0.611);
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.submit-form:hover {
+    transform: scale(1.2);
+    background-color: rgba(4, 72, 37, 0.861);
+
+}
+
+/* Modal Shadow start */
+
+.modal-shadow {
+    z-index: 1;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.712);
+}
+
+.modal-shadow.active {
+    display: block;
+}
+
+/* Modal Shadow end */
+/* Modal End */
+
+/* !Footer Start */
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+}
+/* Footer End */
